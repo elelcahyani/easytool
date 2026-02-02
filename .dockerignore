@@ -1,0 +1,17 @@
+# Frontend
+frontend/node_modules
+frontend/.next
+frontend/.env.local
+
+# Backend
+backend/venv
+backend/__pycache__
+backend/temp
+backend/.env
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
