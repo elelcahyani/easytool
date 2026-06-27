@@ -73,7 +73,7 @@ export default function PdfToTextPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'extracted_text.txt'
+      a.download = file.name.replace(/\.pdf$/i, '.txt')
       document.body.appendChild(a)
       a.click()
       window.URL.revokeObjectURL(url)

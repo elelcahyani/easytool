@@ -34,7 +34,7 @@ export default function ImageResizePage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = files.length === 1 ? 'resized.jpg' : 'resized.zip'
+      a.download = files.length === 1 ? files[0].name : `${files[0].name.replace(/\.[^.]+$/, '')}_resized.zip`
       a.click()
       window.URL.revokeObjectURL(url)
 

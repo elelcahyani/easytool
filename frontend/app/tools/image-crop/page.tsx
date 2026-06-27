@@ -45,11 +45,14 @@ export default function ImageCropPage() {
             </label>
           </div>
 
-          <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-            <p className="text-yellow-800">
-              <strong>Coming Soon:</strong> Interactive crop tool with aspect ratio options
-            </p>
-          </div>
+          <button
+            disabled
+            className="w-full mt-4 bg-gray-400 text-white py-4 rounded-xl font-semibold opacity-50 cursor-not-allowed"
+          >
+            This Tools Available Soon
+          </button>
+
+
         </div>
 
         <div className="mt-8 bg-blue-50 rounded-xl p-6">

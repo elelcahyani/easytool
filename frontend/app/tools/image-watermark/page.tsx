@@ -43,7 +43,7 @@ export default function ImageWatermarkPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'watermarked.png'
+      a.download = file.name
       a.click()
       window.URL.revokeObjectURL(url)
 

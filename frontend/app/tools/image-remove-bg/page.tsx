@@ -38,7 +38,7 @@ export default function RemoveBackgroundPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'no_background.png'
+      a.download = file.name.replace(/\.[^.]+$/, '.png')
       a.click()
       window.URL.revokeObjectURL(url)
 
@@ -76,13 +76,7 @@ export default function RemoveBackgroundPage() {
             {loading ? 'Removing Background...' : 'Remove Background & Download'}
           </button>
 
-          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-            <strong>⚠️ Note:</strong> This feature requires the rembg library with onnxruntime backend.
-            <br />
-            <strong>Python Compatibility:</strong> Requires Python 3.8-3.12 (onnxruntime does not support Python 3.13+ yet)
-            <br />
-            If you see an error, please check the REMOVE_BACKGROUND_FIX.md file for solutions.
-          </div>
+
         </div>
 
         <div className="mt-8 bg-blue-50 rounded-xl p-6">
@@ -93,13 +87,7 @@ export default function RemoveBackgroundPage() {
             <li>3. Wait for the AI to process and remove the background</li>
             <li>4. Download your image with transparent background (PNG format)</li>
           </ol>
-          <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-            <strong>⚠️ Note:</strong> This feature requires the rembg library with onnxruntime backend.
-            <br />
-            <strong>Python Compatibility:</strong> Requires Python 3.8-3.12 (onnxruntime does not support Python 3.13+ yet)
-            <br />
-            If you see an error, please check the REMOVE_BACKGROUND_FIX.md file for solutions.
-          </div>
+
         </div>
       </div>
     </main>

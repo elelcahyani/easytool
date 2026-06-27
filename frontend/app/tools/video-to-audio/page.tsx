@@ -28,7 +28,7 @@ export default function VideoToAudioPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'audio.mp3'
+      a.download = file.name.replace(/\.[^.]+$/, '.mp3')
       a.click()
       window.URL.revokeObjectURL(url)
 
@@ -72,9 +72,7 @@ export default function VideoToAudioPage() {
             {loading ? 'Extracting Audio...' : 'Extract Audio & Download MP3'}
           </button>
 
-          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-            <strong>Note:</strong> Requires ffmpeg. Processing may take a while for large videos.
-          </div>
+
         </div>
 
         <div className="mt-8 bg-blue-50 rounded-xl p-6">

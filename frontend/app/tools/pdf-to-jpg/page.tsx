@@ -75,7 +75,7 @@ export default function PdfToJpgPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'pdf_to_jpg.zip'
+      a.download = `${file.name.replace('.pdf', '')}_jpg.zip`
       document.body.appendChild(a)
       a.click()
       window.URL.revokeObjectURL(url)

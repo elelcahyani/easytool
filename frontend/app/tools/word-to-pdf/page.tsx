@@ -28,7 +28,7 @@ export default function WordToPdfPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'converted.pdf'
+      a.download = file.name.replace(/\.(docx?|doc)$/i, '.pdf')
       a.click()
       window.URL.revokeObjectURL(url)
 

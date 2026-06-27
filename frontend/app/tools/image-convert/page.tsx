@@ -30,7 +30,7 @@ export default function ImageConvertPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = files.length === 1 ? `converted.${format.toLowerCase()}` : 'converted.zip'
+      a.download = files.length === 1 ? files[0].name.replace(/\.[^.]+$/, `.${format.toLowerCase()}`) : `${files[0].name.replace(/\.[^.]+$/, '')}_converted.zip`
       a.click()
       window.URL.revokeObjectURL(url)
 

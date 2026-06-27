@@ -28,7 +28,7 @@ export default function CompressImagePage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = files.length === 1 ? 'compressed.jpg' : 'compressed.zip'
+      a.download = files.length === 1 ? files[0].name : `${files[0].name.replace(/\.[^.]+$/, '')}_compressed.zip`
       a.click()
       window.URL.revokeObjectURL(url)
 

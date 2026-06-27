@@ -73,7 +73,7 @@ export default function PdfExtractImagesPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'extracted_images.zip'
+      a.download = `${file.name.replace('.pdf', '')}_images.zip`
       document.body.appendChild(a)
       a.click()
       window.URL.revokeObjectURL(url)

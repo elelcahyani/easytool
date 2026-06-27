@@ -30,7 +30,7 @@ export default function AudioConvertPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = `converted.${format}`
+      a.download = file.name.replace(/\.[^.]+$/, `.${format}`)
       a.click()
       window.URL.revokeObjectURL(url)
 
@@ -76,9 +76,7 @@ export default function AudioConvertPage() {
             {loading ? 'Converting...' : 'Convert & Download'}
           </button>
 
-          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-            <strong>Note:</strong> Requires ffmpeg to be installed on the server.
-          </div>
+
         </div>
 
         <div className="mt-8 bg-blue-50 rounded-xl p-6">

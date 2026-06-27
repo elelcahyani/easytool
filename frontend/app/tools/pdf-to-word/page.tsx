@@ -28,7 +28,7 @@ export default function PdfToWordPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'converted.docx'
+      a.download = file.name.replace(/\.pdf$/i, '.docx')
       a.click()
       window.URL.revokeObjectURL(url)
 
@@ -66,9 +66,7 @@ export default function PdfToWordPage() {
             {loading ? 'Converting...' : 'Convert & Download DOCX'}
           </button>
 
-          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-            <strong>Note:</strong> Works best with text-based PDFs. Scanned or image-based PDFs may not convert accurately.
-          </div>
+
         </div>
 
         <div className="mt-8 bg-blue-50 rounded-xl p-6">
@@ -79,9 +77,7 @@ export default function PdfToWordPage() {
             <li>3. Wait for the conversion to complete</li>
             <li>4. Your editable Word document will be automatically downloaded</li>
           </ol>
-          <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-            <strong>⚠️ Note:</strong> Works best with text-based PDFs. Scanned or image-based PDFs may not convert accurately.
-          </div>
+
         </div>
       </div>
     </main>

@@ -28,7 +28,7 @@ export default function SplitPdfPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'split.zip'
+      a.download = `${file.name.replace('.pdf', '')}_pages.zip`
       a.click()
       window.URL.revokeObjectURL(url)
 

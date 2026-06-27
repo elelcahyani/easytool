@@ -30,7 +30,7 @@ export default function PdfToImagePage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'pdf_images.zip'
+      a.download = `${file.name.replace('.pdf', '')}_images.zip`
       a.click()
       window.URL.revokeObjectURL(url)
 

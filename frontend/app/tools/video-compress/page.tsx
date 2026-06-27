@@ -30,7 +30,7 @@ export default function VideoCompressPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'compressed.mp4'
+      a.download = file.name
       a.click()
       window.URL.revokeObjectURL(url)
 
@@ -76,9 +76,7 @@ export default function VideoCompressPage() {
             {loading ? 'Compressing... (This may take a while)' : 'Compress & Download'}
           </button>
 
-          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-            <strong>Note:</strong> Requires ffmpeg. Large videos may take several minutes to process.
-          </div>
+
         </div>
 
         <div className="mt-8 bg-blue-50 rounded-xl p-6">

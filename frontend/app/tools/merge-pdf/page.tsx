@@ -74,7 +74,7 @@ export default function MergePdfPage() {
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = 'merged.pdf'
+      a.download = `${files[0].name.replace('.pdf', '')}_merged.pdf`
       a.click()
       window.URL.revokeObjectURL(url)
 
